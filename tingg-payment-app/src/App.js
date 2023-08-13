@@ -1,32 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import LoginPage from './LoginPage';
-import Header from './Header';
-import SideMenu from './SideMenu';
-import SendMoney from './SendMoney';
-import PayBill from './PayBill';
-import BuyAirtime from './BuyAirtime';
-import BuyVoucher from './BuyVoucher';
+import LoginPage from './components/LoginPage';
+import Header from './components/Header';
+import SideMenu from './components/SideMenu';
+import SendMoneyPage from './pages/SendMoneyPage';
+import PayBillPage from './pages/PayBillPage';
+import BuyAirtimePage from './pages/BuyAirtimePage';
+import BuyVoucherPage from './pages/BuyVoucherPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <div className="container-fluid">
+          <div className="row">
+            <SideMenu />
+            <Switch>
+              <Route path="/login" component={LoginPage} />
+              <Route path="/send-money" component={SendMoneyPage} />
+              <Route path="/pay-bill" component={PayBillPage} />
+              <Route path="/buy-airtime" component={BuyAirtimePage} />
+              <Route path="/buy-voucher" component={BuyVoucherPage} />
+              {/* Add more routes as needed */}
+            </Switch>
+          </div>
+        </div>
+      </div>
+    </Router>
   );
 }
 

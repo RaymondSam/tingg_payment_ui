@@ -1,5 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import LoginPage from './LoginPage';
+import Header from './Header';
+import SideMenu from './SideMenu';
+import SendMoney from './SendMoney';
+import PayBill from './PayBill';
+import BuyAirtime from './BuyAirtime';
+import BuyVoucher from './BuyVoucher';
 
 function App() {
   return (
